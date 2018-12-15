@@ -1,0 +1,97 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "where the fuck is our kit",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "I've found it",
+                        "Cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "I don't understand",
+                        "Help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "Cancel",
+                        "I've found it"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": [
+                        "I'm done"
+                    ]
+                },
+                {
+                    "name": "KitIntent",
+                    "slots": [],
+                    "samples": [
+                        "The multicore",
+                        "The DMX",
+                        "The mic string"
+                    ]
+                },
+                {
+                    "name": "NothingIntent",
+                    "slots": [],
+                    "samples": [
+                        "Its all in the store room",
+                        "I havent lost anything",
+                        "Not anything",
+                        "Nothing"
+                    ]
+                },
+                {
+                    "name": "HogIntent",
+                    "slots": [],
+                    "samples": [
+                        "the lighting desk",
+                        "the hog"
+                    ]
+                },
+                {
+                    "name": "PersonIntent",
+                    "slots": [],
+                    "samples": [
+                        "The Logistics Manager",
+                        "The Members Officer",
+                        "The Communications Officer",
+                        "The Technical Director",
+                        "The comunications officer",
+                        "The publicity officer",
+                        "The hire and sales manager",
+                        "The treasurer",
+                        "The logystics manger",
+                        "The equipment manager",
+                        "The producitons manager",
+                        "the committee",
+                        "the TD"
+                    ]
+                },
+                {
+                    "name": "EverythingIntent",
+                    "slots": [],
+                    "samples": [
+                        "Too much to list",
+                        "The store room",
+                        "All the things",
+                        "Everything"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
