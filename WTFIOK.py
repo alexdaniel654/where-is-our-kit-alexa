@@ -36,7 +36,25 @@ def excuse_fb():
 
 @ask.intent("NothingIntent")
 def nothing():
-	return statement('Good work. Keep it that way!')
+	rewards = ['Good work. Keep it that way!', 'Glad to hear it!', 'That\'s good', 'Not for long!', 'Don\'t jinx it']
+	message = rewards[random.randint(0, len(rewards)-1)]
+	return statement(message)
+
+@ask.intent('AMAZON.CancelIntent')
+def cancel():
+	return statement('Glad you\'ve found it.')
+
+@ask.intent('AMAZON.HelpIntent')
+def help():
+	return statement('This skill helps you to find lost kit. Just tell me what you\'ve lost')
+
+@ask.intent('AMAZON.StopIntent')
+def stop():
+	return statement('Glad you\'ve found it.')
+
+@ask.intent('AMAZON.NavigateHomeIntent')
+def home():
+	return statement('Glad you\'ve found it.')
 
 if __name__ == '__main__':
 	app.run()
