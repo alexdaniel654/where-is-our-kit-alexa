@@ -5,7 +5,7 @@ import random
 
 
 app = Flask(__name__)
-ask = Ask(app, "/")
+ask = Ask(app, '/')
 
 def make_excuse():
 	places = ['Under the bins', 'Left on a job', 'Eaten', 'Someone\'s house', 'Accidentally gave it to the client', 'Really? Again?', 'Oh that, we lost that months ago', 'Why are you asking me for help?', 'It\'s in broken bits', 'In the van?', 'In the theatre', 'Relax, I\'m sure it\'ll turn up soon', 'Where you last had it', 'I\'m sure it will magically appear', 'Try calling it', 'The PO book drawer', 'In the corridore', 'Just go to the pub', 'With the e-stop key']
@@ -16,7 +16,7 @@ def make_excuse():
 @app.route('/')
 
 def homepage():
-	return "Hello world! This is a test page."
+	return 'Hello world! This is a test page.'
 
 @ask.launch
 def start_skill():
@@ -24,10 +24,22 @@ def start_skill():
 	welcome_message = welcomes[random.randint(0, len(welcomes)-1)]
 	return question(welcome_message)
 
-@ask.intent("KitIntent")
+@ask.intent('KitIntent')
 def excuse():
 	ex = make_excuse()
 	return statement(ex)
+
+@ask.intent('HogIntent')
+def hog():
+	excuses = ['Nobody ever cared about the hog anyway.', 'Nobody could use it, no great loss.', 'Have you tried using the pearl?']
+	message = excuses[random.randint(0, len(excuses)-1)]
+	return statement(message)
+
+@ask.intent('PersonIntent')
+def person():
+	excuses = ['That\'s not gone well', 'Is there someone else you can get to fill that position?', 'They didn\'t do much anyway', 'No great loss, someone else will pick up the slack']
+	message = excuses[random.randint(0, len(excuses)-1)]
+	return statement(message)
 
 @ask.intent('AMAZON.FallbackIntent')
 def excuse_fb():
