@@ -46,6 +46,12 @@ def excuse_fb():
 	ex = make_excuse()
 	return statement(ex)
 
+@ask.intent('EverythingIntent')
+def everything():
+	excuses = ['Even for tech that\'s really stupid', 'Are you sure? We havent lost everything before.', 'That\'s a new low, good work']
+	message = excuses[random.randint(0, len(excuses)-1)]
+	return statement(message)
+
 @ask.intent("NothingIntent")
 def nothing():
 	rewards = ['Good work. Keep it that way!', 'Glad to hear it!', 'That\'s good', 'Not for long!', 'Don\'t jinx it']
